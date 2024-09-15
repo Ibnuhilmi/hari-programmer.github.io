@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Programmer's Day!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #0d1117;
+            color: #c9d1d9;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #58a6ff;
+            margin: 0;
+            animation: slideDown 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #79c0ff;
+            margin: 10px 0;
+            animation: zoomIn 2s ease-in-out 1s;
+        }
+
+        .code {
+            margin-top: 20px;
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: glow 3s infinite, codeBounce 5s infinite;
+        }
+
+        .binary {
+            font-size: 1.2em;
+            margin-top: 20px;
+            animation: blink 1s infinite;
+        }
+
+        /* Animasi Background Binary */
+        .binary-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: -1;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 50%, transparent 50%),
+                              linear-gradient(transparent 50%, rgba(255, 255, 255, 0.05) 50%);
+            background-size: 10px 10px;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                background-position: 0 0, 0 0;
+            }
+            100% {
+                background-position: 100% 100%, 100% 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #58a6ff; }
+            50% { box-shadow: 0 0 20px #58a6ff; }
+            100% { box-shadow: 0 0 10px #58a6ff; }
+        }
+
+        @keyframes codeBounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .floating-binary {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 2em;
+            animation: float 10s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+
+        /* Randomized floating binary */
+        .floating-binary:nth-child(2) { left: 20%; animation-duration: 12s; }
+        .floating-binary:nth-child(3) { left: 40%; animation-duration: 8s; }
+        .floating-binary:nth-child(4) { left: 60%; animation-duration: 15s; }
+        .floating-binary:nth-child(5) { left: 80%; animation-duration: 6s; }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 1em;
+            color: #8b949e;
+        }
+
+        .footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Programmer's Day!</h1>
+        <h2>Code the Future</h2>
+
+        <div class="code">
+            <p>&lt;!-- Write code, change the world --&gt;</p>
+            <p>int main() {</p>
+            <p>&nbsp;&nbsp;printf("Happy Programmer's Day!");</p>
+            <p>&nbsp;&nbsp;return 0;</p>
+            <p>}</p>
+        </div>
+
+        <div class="binary">
+            01001000 01100001 01110000 01110000 01111001 00100000 01001101 01110010 00101110 00100000
+        </div>
+    </div>
+
+    <!-- Binary Background and Floating Binaries -->
+    <div class="binary-background"></div>
+    <div class="floating-binary">01010101</div>
+    <div class="floating-binary">01101100</div>
+    <div class="floating-binary">01101001</div>
+    <div class="floating-binary">01110100</div>
+    <div class="floating-binary">01111001</div>
+
+    <div class="footer">
+        <p>Created with ❤️ by <a href="#">Ibnu Hilmi</a></p>
+    </div>
+</body>
+</html>
